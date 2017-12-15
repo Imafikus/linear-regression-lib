@@ -50,7 +50,19 @@ double LinearRegresion::calculateB1()
     double e2 = 0; //current dep var - dep_mean
     double e3 = 0; //e1 squared
 
-   // for(int i = 0; i < dependent_vars.size())
+    double s1 = 0;// final sum will be s1/s2
+    double s2 = 0;
+
+    for(int i = 0; i < observation_num; i++)
+    {
+        e1 = independent_vars.at(i) - ind_mean;
+        e2 = dependent_vars.at(i) - dep_mean;
+        s1 += e1 * e2;
+
+        e3 = e1 * e1;
+        s2 += e3;
+    }
+    return s1/s2;
 }
 void LinearRegresion::getDataPaths(string path1, string path2)
 {
@@ -82,24 +94,11 @@ void LinearRegresion::printCentroid()
 }
 void LinearRegresion::testStuff()
 {
-    getObservationNum();
-    cout << "depend" << endl;
-    for(int i = 0; i < dependent_vars.size(); i++)
-        cout << dependent_vars.at(i) << " ";
-    cout << endl;
-
-    cout << "independ" << endl;
-    for(int i = 0; i < independent_vars.size(); i++)
-        cout << independent_vars.at(i) << " ";
-    cout << endl;
-
+    //FillVectors();
     getObservationNum();
     calculateIndMean();
     calculateDepMean();
-    calculateSSE();
-    printCentroid();
-    cout << "SSE value is:" << sse << endl;
-    getObservationNum();
-    cout << observation_num << endl;
+    cout << calculateB1() << endl;
+
 
 }
