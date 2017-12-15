@@ -10,19 +10,27 @@ private:
     std::vector<double> dependent_vars; //vector for dependent vars
     std::vector<double> independent_vars; //vector for independent vars
 
-    int observed_vars_number; //number of "dots" on our graph
-    double mean; //mean value for dependent vars
+    int observation_num; //number of "dots" on our graph
+    double dep_mean; //mean value for dependent vars
+    double ind_mean; //mean value for independent vars
+    double sse; //sum of square errors
+    double b1; //slope in equation
+    double b0; //intercept in equation
 
     //paths of data files
     std::string d_path;
     std::string i_path;
 
-    double calculateMean();
+    void getObservationNum();
+    double calculateDepMean();
+    double calculateIndMean();
     double calculateSSE();
+    double calculateB1();
 
 public:
     void FillVectors();
     void getDataPaths(std::string path1, std::string path2);// gets paths for dependent/independent data
+    void printCentroid();
     void testStuff();
 
 };
