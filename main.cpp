@@ -8,6 +8,5 @@ int main()
 {
     LinearRegresion Test;
     Test.getDataPaths("dependent_vars.txt", "independent_vars.txt");
-    Test.FillVectors();
-    Test.testStuff();
+    Test.Regression();
 }
