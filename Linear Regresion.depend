@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1513292085 source:e:\projects\statistical learning\linear regresion\linreg.cpp
+1513372179 source:e:\projects\statistical learning\linear regresion\linreg.cpp
 	"linreg.h"
 	<iostream>
 	<string>
 	<fstream>
 
-1513291122 e:\projects\statistical learning\linear regresion\linreg.h
+1513371836 e:\projects\statistical learning\linear regresion\linreg.h
 	<string>
 	<vector>
 
-1513292073 source:e:\projects\statistical learning\linear regresion\main.cpp
+1513292208 source:e:\projects\statistical learning\linear regresion\main.cpp
 	<iostream>
 	<string>
 	"linreg.h"

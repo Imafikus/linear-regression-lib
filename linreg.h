@@ -11,10 +11,14 @@ private:
     std::vector<double> independent_vars; //vector for independent vars
 
     int observed_vars_number; //number of "dots" on our graph
+    double mean; //mean value for dependent vars
 
     //paths of data files
     std::string d_path;
     std::string i_path;
+
+    double calculateMean();
+    double calculateSSE();
 
 public:
     void FillVectors();
