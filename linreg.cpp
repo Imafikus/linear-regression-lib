@@ -44,7 +44,7 @@ double LinearRegresion::calculateSSE()
 
     return sse;
 }
-double LinearRegresion::calculateB1()
+void LinearRegresion::calculateB1()
 {
     double e1 = 0; //current ind var - ind_mean
     double e2 = 0; //current dep var - dep_mean
@@ -62,7 +62,11 @@ double LinearRegresion::calculateB1()
         e3 = e1 * e1;
         s2 += e3;
     }
-    return s1/s2;
+    b1 = s1/s2;
+}
+void LinearRegresion::calculateB0()
+{
+    b0 = dep_mean - b1 * ind_mean;
 }
 void LinearRegresion::getDataPaths(string path1, string path2)
 {
@@ -98,7 +102,10 @@ void LinearRegresion::testStuff()
     getObservationNum();
     calculateIndMean();
     calculateDepMean();
-    cout << calculateB1() << endl;
+    calculateB1();
+    calculateB0();
+    cout << b1 << endl;
+    cout << b0 << endl;
 
 
 }

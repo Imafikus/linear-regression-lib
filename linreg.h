@@ -25,7 +25,8 @@ private:
     double calculateDepMean();
     double calculateIndMean();
     double calculateSSE();
-    double calculateB1();
+    void calculateB1();
+    void calculateB0();
 
 public:
     void FillVectors();
